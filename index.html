@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <!-- Lucky Game Section (เกมสุ่มรางวัล) -->
+            <!-- Lucky Game Section -->
             <div class="mb-10">
                 <div class="flex justify-between items-center mb-4">
                     <div>
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <!-- Category Recommended Section (หมวดหมู่แนะนำ) -->
+            <!-- Category Recommended Section -->
             <div class="mb-10">
                 <div class="flex justify-between items-center mb-4">
                     <div>
@@ -130,14 +130,13 @@
                 </div>
             </div>
 
-            <!-- Product Recommended Section (สินค้าแนะนำ) -->
+            <!-- Product Recommended Section -->
             <div id="shop-section" class="mb-10">
                 <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
                     <div>
                         <h3 class="text-lg md:text-xl font-bold flex items-center text-white"><i class="fa-solid fa-store text-orange-500 mr-2"></i> สินค้าแนะนำ Product Recommended</h3>
                         <p class="text-xs text-slate-400">ไอดีเกม Free Fire คุณภาพสูง พร้อมส่งทันที</p>
                     </div>
-                    <!-- Filter Dropdown -->
                     <div class="flex items-center space-x-2">
                         <span class="text-xs text-slate-400"><i class="fa-solid fa-filter mr-1"></i> ฟิลเตอร์:</span>
                         <select id="sort-select" onchange="sortProducts()" class="bg-slate-900 border border-slate-800 text-xs text-slate-200 rounded-xl px-3 py-2 focus:outline-none focus:border-orange-500">
@@ -149,13 +148,11 @@
                 </div>
 
                 <!-- Product Grid -->
-                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                    <!-- Products dynamically rendered here -->
-                </div>
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"></div>
             </div>
         </div>
 
-        <!-- History Section (Hidden by default) -->
+        <!-- History Section -->
         <div id="history-section" class="hidden">
             <h3 class="text-xl md:text-2xl font-bold mb-4 flex items-center text-white"><i class="fa-solid fa-clock-rotate-left text-orange-500 mr-2"></i> ประวัติการสั่งซื้อของคุณ</h3>
             <div id="purchase-history-list" class="space-y-4">
@@ -170,13 +167,12 @@
         <p>บริการด้วยความซื่อสัตย์ ชำระเงินผ่านซองอั่งเปา TrueMoney Wallet สะดวก ปลอดภัย</p>
     </footer>
 
-    <!-- Modal: Login / Register -->
+    <!-- Modals -->
     <div id="loginModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="bg-slate-900 border border-orange-500/30 rounded-2xl w-full max-w-md p-6 glow-box relative">
             <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
             <h3 class="text-xl font-bold mb-1 text-orange-400">ล็อกอิน / สมัครสมาชิก</h3>
             <p class="text-xs text-slate-400 mb-4">เข้าสู่ระบบเพื่อทำรายการสั่งซื้อและดูข้อมูลไอดี</p>
-            
             <div class="space-y-3 mb-4">
                 <div>
                     <label class="block text-xs text-slate-300 mb-1">ชื่อผู้ใช้งาน (Username)</label>
@@ -191,7 +187,6 @@
         </div>
     </div>
 
-    <!-- Modal: Checkout (TrueMoney Gift) -->
     <div id="checkoutModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="bg-slate-900 border border-orange-500/30 rounded-2xl w-full max-w-lg p-6 glow-box relative max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('checkoutModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
@@ -199,7 +194,6 @@
         </div>
     </div>
 
-    <!-- Modal: Lucky Game Wheel -->
     <div id="wheelModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
         <div class="bg-slate-900 border border-orange-500/30 rounded-2xl w-full max-w-md p-6 text-center relative glow-box">
             <button onclick="closeModal('wheelModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
@@ -216,7 +210,6 @@
     </div>
 
     <script>
-        // Products Database
         let products = [
             { id: 1, code: "FF7428", name: "รหัสสินค้า FF7428 [เชื่อมGG]", price: 3208, stock: 1, cat: "1000", type: "Google", img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80", user: "FF_User_7428", pass: "pass_7428_gg" },
             { id: 2, code: "FF7427", name: "รหัสสินค้า FF7427 [เชื่อมGG]", price: 3745, stock: 1, cat: "1000", type: "Google", img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop&q=80", user: "FF_User_7427", pass: "pass_7427_gg" },
@@ -270,9 +263,7 @@
         function sortProducts() {
             const val = document.getElementById('sort-select').value;
             let sorted = [...products];
-            if(currentFilter !== 'all') {
-                sorted = sorted.filter(p => p.cat === currentFilter);
-            }
+            if(currentFilter !== 'all') sorted = sorted.filter(p => p.cat === currentFilter);
             if(val === 'asc') sorted.sort((a,b) => a.price - b.price);
             if(val === 'desc') sorted.sort((a,b) => b.price - a.price);
             renderProducts(sorted);
@@ -342,17 +333,14 @@
                         <p class="text-orange-400 font-extrabold text-xs mt-1">ราคา: ${selectedProduct.price.toLocaleString()} บาท</p>
                     </div>
                 </div>
-                
                 <div class="bg-orange-500/10 border border-orange-500/30 p-3.5 rounded-xl mb-4">
                     <h5 class="font-bold text-xs text-orange-400 mb-1">ชำระผ่านซองอั่งเปา TrueMoney Wallet</h5>
                     <p class="text-[11px] text-slate-300">กรุณาสร้างซองอั่งเปาจำนวนเงิน <strong>${selectedProduct.price.toLocaleString()} บาท</strong> แล้วแปะลิงก์ด้านล่าง</p>
                 </div>
-
                 <div class="mb-4">
                     <label class="block text-xs text-slate-300 mb-1">วางลิงก์ซองอั่งเปาทรูมันนี่</label>
                     <input type="text" id="gift-link-input" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-orange-500 text-white" placeholder="https://gift.truemoney.com/v2/redeem?v=...">
                 </div>
-
                 <button onclick="confirmPurchase()" class="w-full bg-orange-500 hover:bg-orange-600 text-slate-950 font-extrabold py-2.5 rounded-xl shadow-lg transition text-xs">ยืนยันชำระเงินและรับไอดี</button>
             `;
             openModal('checkoutModal');
@@ -364,7 +352,6 @@
                 alert('กรุณากรอกลิงก์ซองอั่งเปา TrueMoney Wallet ให้ถูกต้อง');
                 return;
             }
-
             const newPurchase = {
                 id: Date.now(),
                 user: currentUser.username,
@@ -374,10 +361,9 @@
                 gamePass: selectedProduct.pass,
                 date: new Date().toLocaleString('th-TH')
             };
-
             purchases.push(newPurchase);
             localStorage.setItem('focus_purchases', JSON.stringify(purchases));
-            selectedProduct.stock = 0; // Update stock
+            selectedProduct.stock = 0;
             closeModal('checkoutModal');
             renderProducts();
             alert('ชำระเงินสำเร็จ! รับไอดีได้ที่หน้าประวัติการสั่งซื้อ');
