@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โฟกัส ช้อป - ร้านขายไอดี Free Fire ปลอดภัย ไม่โกง 100%</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Prompt', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glow-text { text-shadow: 0 0 15px rgba(249, 115, 22, 0.6); }
+        .glow-box { box-shadow: 0 0 20px rgba(249, 115, 22, 0.2); }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="bg-slate-900 border-b border-orange-500/30 sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-600 to-amber-400 flex items-center justify-center shadow-lg shadow-orange-500/50">
+                    <i class="fa-solid fa-fire text-white text-xl animate-pulse"></i>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-xl tracking-wide bg-gradient-to-r from-orange-400 to-amber-300 bg-clip-text text-transparent">โฟกัส ช้อป</h1>
+                    <p class="text-xs text-orange-400 font-medium">🛡️ นโยบายไม่โกง 100%</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-3">
+                <button onclick="switchTab('home')" class="px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-slate-800 text-orange-400 transition"><i class="fa-solid fa-store mr-1"></i> หน้าแรก</button>
+                <button onclick="switchTab('history')" class="px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-slate-800 text-slate-300 hover:text-white transition"><i class="fa-solid fa-clock-rotate-left mr-1"></i> ประวัติซื้อ</button>
+                <div id="auth-section" class="flex items-center space-x-2">
+                    <button onclick="openModal('loginModal')" class="bg-orange-600 hover:bg-orange-500 text-white px-4 py-1.5 rounded-lg text-sm font-bold shadow-lg shadow-orange-600/30 transition">เข้าสู่ระบบ</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 py-6 w-full">
+        <!-- Hero Banner -->
+        <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-orange-950 via-slate-900 to-amber-950 border border-orange-500/40 p-6 md:p-10 mb-8 glow-box">
+            <div class="relative z-10 max-w-2xl">
+                <span class="bg-orange-500/20 text-orange-400 text-xs font-bold px-3 py-1 rounded-full border border-orange-500/30 inline-block mb-3">🔥 Free Fire ID Store เกรดพรีเมียม</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-3 glow-text">ยินดีต้อนรับสู่ <span class="text-orange-400">โฟกัส ช้อป</span></h2>
+                <p class="text-slate-300 text-sm md:text-base mb-6">แหล่งรวมไอดีเกม Free Fire ปืนอีโว ชุดแรร์ ราคาถูก ปลอดภัย 100% เชื่อถือได้ ระบบออโต้โอนซองอั่งเปา TrueMoney Wallet รวดเร็วทันใจ</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="#shop-section" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow-lg transition flex items-center"><i class="fa-solid fa-cart-shopping mr-2"></i> เลือกซื้อไอดีเลย</a>
+                    <button onclick="openModal('wheelModal')" class="bg-slate-800 hover:bg-slate-700 text-orange-400 border border-orange-500/40 font-semibold px-5 py-2.5 rounded-xl transition flex items-center"><i class="fa-solid fa-gift mr-2 text-amber-400"></i> สุ่มวงล้ออั่งเปา</button>
+                </div>
+            </div>
+            <div class="absolute right-0 bottom-0 opacity-20 md:opacity-40 pointer-events-none translate-x-10 translate-y-10">
+                <i class="fa-solid fa-gamepad text-[250px] text-orange-500"></i>
+            </div>
+        </div>
+
+        <!-- Shop Section -->
+        <div id="shop-section" class="mb-10">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold flex items-center"><i class="fa-solid fa-shield-halved text-orange-500 mr-2"></i> คลังไอดี Free Fire พร้อมส่ง</h3>
+                    <p class="text-xs text-slate-400">คลิกดูรายละเอียดและกดสั่งซื้อผ่านซองอั่งเปา TrueMoney ได้ทันที</p>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- สินค้าถูกเติมด้วย Javascript ด้านล่าง -->
+            </div>
+        </div>
+
+        <!-- History Section (Hidden by default) -->
+        <div id="history-section" class="hidden">
+            <h3 class="text-2xl font-bold mb-4 flex items-center"><i class="fa-solid fa-clock-rotate-left text-orange-500 mr-2"></i> ประวัติการสั่งซื้อและข้อมูลไอดีของคุณ</h3>
+            <div id="purchase-history-list" class="space-y-4">
+                <p class="text-slate-400">ยังไม่มีประวัติการซื้อ หรือคุณยังไม่ได้เข้าสู่ระบบ</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-6 mt-auto text-center text-xs text-slate-400">
+        <p class="font-bold text-orange-400 mb-1">โฟกัส ช้อป - บริการด้วยความซื่อสัตย์ ไม่โกง 100%</p>
+        <p>ชำระเงินผ่านซองอั่งเปา TrueMoney Wallet เท่านั้น สะดวก ปลอดภัย</p>
+    </footer>
+
+    <!-- Modal: Login / Register -->
+    <div id="loginModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-slate-900 border border-orange-500/40 rounded-2xl w-full max-w-md p-6 glow-box relative">
+            <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <h3 class="text-xl font-bold mb-1 text-orange-400">เข้าสู่ระบบ / สมัครสมาชิก</h3>
+            <p class="text-xs text-slate-400 mb-4">เข้าสู่ระบบเพื่อบันทึกประวัติการซื้อและดูรหัสไอดีเกมของคุณ</p>
+            
+            <div class="space-y-3 mb-4">
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">ชื่อผู้ใช้งาน (Username)</label>
+                    <input type="text" id="login-username" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-orange-500 text-white" placeholder="กรอกชื่อผู้ใช้ของคุณ">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-300 mb-1">รหัสผ่าน (Password)</label>
+                    <input type="password" id="login-password" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-orange-500 text-white" placeholder="กรอกรหัสผ่าน">
+                </div>
+            </div>
+            <button onclick="handleLogin()" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-2.5 rounded-xl shadow-lg transition">เข้าสู่ระบบ / สมัครออโต้</button>
+        </div>
+    </div>
+
+    <!-- Modal: Product Details & Checkout (TrueMoney Gift) -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-slate-900 border border-orange-500/40 rounded-2xl w-full max-w-lg p-6 glow-box relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('checkoutModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            
+            <div id="checkout-content">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Mini Game Wheel -->
+    <div id="wheelModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-slate-900 border border-amber-500/40 rounded-2xl w-full max-w-md p-6 text-center relative glow-box">
+            <button onclick="closeModal('wheelModal')" class="absolute top-4 right-4 text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <div class="w-16 h-16 bg-amber-500/20 border border-amber-500 rounded-full flex items-center justify-center mx-auto mb-3 text-amber-400 text-2xl">
+                <i class="fa-solid fa-gift"></i>
+            </div>
+            <h3 class="text-xl font-bold text-amber-400 mb-1">วงล้อลุ้นโชคซองอั่งเปา</h3>
+            <p class="text-xs text-slate-400 mb-4">สุ่มรับโค้ดส่วนลดพิเศษ หรือลุ้นไอดีฟรี!</p>
+            <div id="wheel-result" class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-sm font-semibold text-slate-300 mb-4">
+                กดปุ่มหมุนด้านล่างเพื่อเสี่ยงโชค! (ค่าบริการสุ่ม 0 บ.)
+            </div>
+            <button onclick="spinWheel()" id="spin-btn" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-extrabold py-3 rounded-xl shadow-lg hover:opacity-95 transition">หมุนวงล้อเสี่ยงโชค</button>
+        </div>
+    </div>
+
+    <script>
+        // Data Products Free Fire
+        const products = [
+            { id: 1, name: "ID Free Fire #01 - ปืนอีโว M1887 + ชุดแรร์ซาตาน", price: 350, type: "Facebook", level: 65, img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80", user: "FF_User_01", pass: "pass_01_abc" },
+            { id: 2, name: "ID Free Fire #02 - สกินหมัดมังกรทอง + โคตรตึง", price: 590, type: "Google", level: 72, img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop&q=80", user: "FF_User_02", pass: "pass_02_xyz" },
+            { id: 3, name: "ID Free Fire #03 - เซตสตรีทบอย + แฟชั่นครบ", price: 290, type: "VK", level: 50, img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&auto=format&fit=crop&q=80", user: "FF_User_03", pass: "pass_03_vk" },
+            { id: 4, name: "ID Free Fire #04 - MP40 อีโวแม็กซ์ + ยศฮีโรอิก", price: 890, type: "Facebook", level: 78, img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80", user: "FF_User_04", pass: "pass_04_evo" },
+            { id: 5, name: "ID Free Fire #05 - ไอดีเริ่มต้น สวยๆ งบน้อย", price: 99, type: "Google", level: 25, img: "https://images.unsplash.com/photo-1563089145-599997674d42?w=600&auto=format&fit=crop&q=80", user: "FF_User_05", pass: "pass_05_new" },
+            { id: 6, name: "ID Free Fire #06 - สการ์อีโว + บันเดิลครบซีซั่น", price: 450, type: "Facebook", level: 60, img: "https://images.unsplash.com/photo-1542751110-97427bbecf20?w=600&auto=format&fit=crop&q=80", user: "FF_User_06", pass: "pass_06_scar" },
+            { id: 7, name: "ID Free Fire #07 - AK อีโว + ไอเทมเพียบ", price: 650, type: "VK", level: 68, img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&auto=format&fit=crop&q=80", user: "FF_User_07", pass: "pass_07_ak" },
+            { id: 8, name: "ID Free Fire #08 - เซตบอยแบนด์ + เพชรเหลือเยอะ", price: 390, type: "Google", level: 55, img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop&q=80", user: "FF_User_08", pass: "pass_08_gem" },
+            { id: 9, name: "ID Free Fire #09 - แกรนด์มาสเตอร์ แรงค์โหด", price: 1290, type: "Facebook", level: 82, img: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80", user: "FF_User_09", pass: "pass_09_gm" },
+            { id: 10, name: "ID Free Fire #10 - ไอดีสายสะสม ปืนแรร์เพียบ", price: 790, type: "Google", level: 70, img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80", user: "FF_User_10", pass: "pass_10_pro" }
+        ];
+
+        let currentUser = localStorage.getItem('focus_user') ? JSON.parse(localStorage.getItem('focus_user')) : null;
+        let purchases = localStorage.getItem('focus_purchases') ? JSON.parse(localStorage.getItem('focus_purchases')) : [];
+
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = products.map(p => `
+                <div class="bg-slate-900 border border-slate-800 hover:border-orange-500/50 rounded-2xl overflow-hidden shadow-lg transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-950">
+                            <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-orange-600 text-white text-xs font-bold px-2.5 py-1 rounded-lg shadow"><i class="fa-solid fa-lock mr-1"></i> ล็อกอิน: ${p.type}</span>
+                            <span class="absolute bottom-3 right-3 bg-slate-950/80 text-amber-400 text-xs font-bold px-2 py-1 rounded-md">Lv.${p.level}</span>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-sm text-slate-100 mb-2 line-clamp-2">${p.name}</h4>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-slate-400">สถานะ: <strong class="text-emerald-400">พร้อมส่งทันที</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-2 pt-3">
+                        <span class="text-lg font-extrabold text-orange-400">${p.price} ฿</span>
+                        <button onclick="openCheckout(${p.id})" class="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs shadow transition flex items-center">
+                            <i class="fa-solid fa-cart-shopping mr-1"></i> ซื้อสินค้า
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function checkAuthUI() {
+            const authSec = document.getElementById('auth-section');
+            if (currentUser) {
+                authSec.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xs text-orange-400 font-bold hidden sm:inline"><i class="fa-solid fa-user-circle mr-1"></i>${currentUser.username}</span>
+                        <button onclick="handleLogout()" class="bg-slate-800 hover:bg-slate-700 text-rose-400 px-3 py-1.5 rounded-lg text-xs font-bold border border-rose-500/30 transition">ออก</button>
+                    </div>
+                `;
+            } else {
+                authSec.innerHTML = `<button onclick="openModal('loginModal')" class="bg-orange-600 hover:bg-orange-500 text-white px-4 py-1.5 rounded-lg text-sm font-bold shadow-lg shadow-orange-600/30 transition">เข้าสู่ระบบ</button>`;
+            }
+        }
+
+        function handleLogin() {
+            const user = document.getElementById('login-username').value.trim();
+            const pass = document.getElementById('login-password').value.trim();
+            if(!user || !pass) { alert('กรุณากรอกชื่อผู้ใช้และรหัสผ่าน'); return; }
+            currentUser = { username: user };
+            localStorage.setItem('focus_user', JSON.stringify(currentUser));
+            closeModal('loginModal');
+            checkAuthUI();
+            alert('เข้าสู่ระบบสำเร็จ!');
+        }
+
+        function handleLogout() {
+            currentUser = null;
+            localStorage.removeItem('focus_user');
+            checkAuthUI();
+            switchTab('home');
+            alert('ออกจากระบบแล้ว');
+        }
+
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+
+        function switchTab(tab) {
+            const homeSec = document.getElementById('shop-section').parentElement;
+            const historySec = document.getElementById('history-section');
+            if(tab === 'home') {
+                homeSec.classList.remove('hidden');
+                historySec.classList.add('hidden');
+            } else if(tab === 'history') {
+                if(!currentUser) { openModal('loginModal'); return; }
+                homeSec.classList.add('hidden');
+                historySec.classList.remove('hidden');
+                renderHistory();
+            }
+        }
+
+        let selectedProduct = null;
+        function openCheckout(id) {
+            if(!currentUser) { alert('กรุณาเข้าสู่ระบบก่อนทำการสั่งซื้อสินค้า'); openModal('loginModal'); return; }
+            selectedProduct = products.find(p => p.id === id);
+            const content = document.getElementById('checkout-content');
+            content.innerHTML = `
+                <h3 class="text-xl font-bold mb-3 text-orange-400">ยืนยันการสั่งซื้อไอดี</h3>
+                <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 mb-4 flex items-center space-x-3">
+                    <img src="${selectedProduct.img}" class="w-16 h-16 object-cover rounded-lg border border-slate-700">
+                    <div>
+                        <h4 class="font-bold text-sm">${selectedProduct.name}</h4>
+                        <p class="text-xs text-slate-400">ล็อกอินผ่าน: <strong class="text-white">${selectedProduct.type}</strong></p>
+                        <p class="text-orange-400 font-extrabold text-sm mt-1">ราคา: ${selectedProduct.price} บาท</p>
+                    </div>
+                </div>
+                
+                <div class="bg-orange-500/10 border border-orange-500/30 p-4 rounded-xl mb-4">
+                    <h5 class="font-bold text-xs text-orange-400 mb-2"><i class="fa-solid fa-circle-info mr-1"></i> วิธีชำระเงิน (ซองอั่งเปา TrueMoney Wallet)</h5>
+                    <ol class="text-xs text-slate-300 space-y-1 list-decimal list-inside">
+                        <li>เปิดแอป TrueMoney Wallet ไปที่เมนู <strong>"ซองอั่งเปา"</strong></li>
+                        <li>ระบุจำนวนเงินให้ตรงเป๊ะ: <strong class="text-amber-400">${selectedProduct.price} บาท</strong> (เลือกส่ง 1 คน)</li>
+                        <li>คัดลอกลิงก์ซองอั่งเปามาวางในช่องด้านล่างนี้</li>
+                    </ol>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-xs text-slate-300 mb-1">วางลิงก์ซองอั่งเปาทรูมันนี่ (TrueMoney Gift Link)</label>
+                    <input type="text" id="gift-link-input" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-orange-500 text-white" placeholder="https://gift.truemoney.com/v2/redeem?v=...">
+                </div>
+
+                <button onclick="confirmPurchase()" class="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:opacity-95 text-slate-950 font-extrabold py-3 rounded-xl shadow-lg transition">ยืนยันการชำระเงินและรับไอดี</button>
+            `;
+            openModal('checkoutModal');
+        }
+
+        function confirmPurchase() {
+            const link = document.getElementById('gift-link-input').value.trim();
+            if(!link || !link.includes('truemoney.com')) {
+                alert('กรุณากรอกลิงก์ซองอั่งเปา TrueMoney Wallet ให้ถูกต้อง');
+                return;
+            }
+
+            // บันทึกคำสั่งซื้อ
+            const newPurchase = {
+                id: Date.now(),
+                user: currentUser.username,
+                productName: selectedProduct.name,
+                price: selectedProduct.price,
+                gameUser: selectedProduct.user,
+                gamePass: selectedProduct.pass,
+                date: new Date().toLocaleString('th-TH')
+            };
+
+            purchases.push(newPurchase);
+            localStorage.setItem('focus_purchases', JSON.stringify(purchases));
+            closeModal('checkoutModal');
+            alert('ชำระเงินสำเร็จ! ระบบได้ตรวจสอบซองอั่งเปาและจัดส่งไอดีให้คุณเรียบร้อยแล้ว');
+            switchTab('history');
+        }
+
+        function renderHistory() {
+            const list = document.getElementById('purchase-history-list');
+            const userPurchases = purchases.filter(p => p.user === currentUser.username);
+            if(userPurchases.length === 0) {
+                list.innerHTML = `<div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl text-center text-slate-400 text-sm">ยังไม่มีประวัติการซื้อสินค้า</div>`;
+                return;
+            }
+            list.innerHTML = userPurchases.map(p => `
+                <div class="bg-slate-900 border border-orange-500/30 p-5 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 glow-box">
+                    <div>
+                        <span class="text-xs text-orange-40
